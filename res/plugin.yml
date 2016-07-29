@@ -1,0 +1,9 @@
+name: HubPortals
+main: com.rayzr522.hubportals.HubPortals
+version: 0.1
+description: HubPortals is a simple plugin that allows you to make custom portals that can do different things.
+author: Rayzr522
+#commands:
+#  <COMMAND_NAME>:
+#    description: <COMMAND_DESC>
+#    #aliases: <ALIASES>
