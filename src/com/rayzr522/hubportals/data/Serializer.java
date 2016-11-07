@@ -9,24 +9,24 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
 public class Serializer {
 
-	public static <T extends ConfigurationSerializable> List<Map<String, Object>> list(List<T> list) {
-		
-		List<Map<String, Object>> output = new ArrayList<Map<String, Object>>();
+    public static <T extends ConfigurationSerializable> List<Map<String, Object>> list(List<T> list) {
 
-		if (list == null) {
+        List<Map<String, Object>> output = new ArrayList<Map<String, Object>>();
 
-		return null;
+        if (list == null) {
 
-		}
+            return null;
 
-		for (T item : list) {
+        }
 
-			output.add(item.serialize());
+        for (T item : list) {
 
-		}
+            output.add(item.serialize());
 
-		return output;
-		
-	}
+        }
+
+        return output;
+
+    }
 
 }

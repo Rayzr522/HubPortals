@@ -7,18 +7,18 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class HPListener implements Listener {
 
-	@SuppressWarnings("unused")
-	private HubPortals plugin;
+    @SuppressWarnings("unused")
+    private HubPortals plugin;
 
-	public HPListener(HubPortals plugin) {
+    public HPListener(HubPortals plugin) {
 
-		this.plugin = plugin;
+        this.plugin = plugin;
 
-	}
+    }
 
-	@EventHandler
-	public void onBlockPlace(BlockPlaceEvent e) {
+    @EventHandler
+    public void onBlockPlace(BlockPlaceEvent e) {
 
-	}
+    }
 
 }

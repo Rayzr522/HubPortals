@@ -10,60 +10,66 @@ import com.rayzr522.hubportals.utils.TextUtils;
 
 public class PortalAction implements ConfigurationSerializable {
 
-	private Type	type;
-	private String	data;
+    private Type   type;
+    private String data;
 
-	public PortalAction(Type type, String data) {
+    public PortalAction(Type type, String data) {
 
-		this.type = type;
-		this.data = data;
+        this.type = type;
+        this.data = data;
 
-	}
+    }
 
-	public void execute() {
+    public void execute() {
 
-	}
+    }
 
-	public enum Type {
+    public enum Type {
 
-		POSITION,
-		COMMAND;
+        POSITION,
+        COMMAND;
 
-		public static Type get(String input) {
+        public static Type get(String input) {
 
-			try {
-				return valueOf(TextUtils.enumFormat(input));
-			} catch (Exception e) {
-				return null;
-			}
+            try {
+                return valueOf(TextUtils.enumFormat(input));
+            } catch (Exception e) {
+                return null;
+            }
 
-		}
+        }
 
-	}
+    }
 
-	@Override
-	public Map<String, Object> serialize() {
+    @Override
+    public Map<String, Object> serialize() {
 
-		Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
 
-		map.put("type", type.toString());
-		map.put("data", data);
+        map.put("type", type.toString());
+        map.put("data", data);
 
-		return map;
+        return map;
 
-	}
+    }
 
-	public static PortalAction deserialize(Map<String, Object> map) {
+    public static PortalAction deserialize(Map<String, Object> map) {
 
-		if (!map.containsKey("type")) { throw new IllegalArgumentException("Invalid data map (missing \"type\" key)"); }
-		if (!map.containsKey("data")) { throw new IllegalArgumentException("Invalid data map (missing \"data\" key)"); }
+        if (!map.containsKey("type")) {
+            throw new IllegalArgumentException("Invalid data map (missing \"type\" key)");
+        }
+        if (!map.containsKey("data")) {
+            throw new IllegalArgumentException("Invalid data map (missing \"data\" key)");
+        }
 
-		Type type = Type.get(map.get("type").toString());
-		if (type == null) { throw new IllegalArgumentException("Invalid data map (the \"type\" key is invalid)"); }
-		String data = map.get("data").toString();
+        Type type = Type.get(map.get("type").toString());
+        if (type == null) {
+            throw new IllegalArgumentException("Invalid data map (the \"type\" key is invalid)");
+        }
+        String data = map.get("data").toString();
 
-		return new PortalAction(type, data);
+        return new PortalAction(type, data);
 
-	}
+    }
 
 }

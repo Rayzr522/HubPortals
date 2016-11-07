@@ -3,20 +3,20 @@ package com.rayzr522.hubportals.data;
 
 public class Classes {
 
-	public static boolean impl(Object obj, Class<?> intrface) {
+    public static boolean impl(Object obj, Class<?> intrface) {
 
-		for (Class<?> claz : obj.getClass().getInterfaces()) {
+        for (Class<?> claz : obj.getClass().getInterfaces()) {
 
-			if (claz.isAssignableFrom(intrface)) {
+            if (claz.isAssignableFrom(intrface)) {
 
-			return true;
+                return true;
 
-			}
+            }
 
-		}
+        }
 
-		return false;
+        return false;
 
-	}
+    }
 
 }
